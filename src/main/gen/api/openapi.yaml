@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Example REST API
+  version: "1.0"
+servers:
+- url: http://localhost:8080
+paths:
+  /api/greet:
+    get:
+      operationId: greet
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Successful operation
+      summary: Greet
+      x-accepts:
+      - application/json
+  /api/echo:
+    post:
+      operationId: echo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+        description: Message to echo
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Successful operation
+      summary: Echo
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+components:
+  schemas: {}
+
